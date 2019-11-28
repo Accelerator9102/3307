@@ -3,6 +3,7 @@
 #include <QLabel>
 #include <QRadioButton>
 #include <QButtonGroup>
+#include <QTimer>
 StartGame::StartGame(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::StartGame)
@@ -46,10 +47,25 @@ StartGame::StartGame(QWidget *parent) :
     nextbtn->move(300,700);
     nextbtn->setParent(this);
 
+    connect(this->nextbtn,&MyPushButton::clicked,[=](){
+
+        this->nextbtn->zoom1();
+        this->nextbtn->zoom1();
+        QTimer::singleShot(1000,this,[=](){
+            this->close();
+        });
+        StartGame * startGame = new StartGame();
+        startGame->show();
+
+    });
 
 }
 
 StartGame::~StartGame()
 {
     delete ui;
+}
+
+void StartGame::nextQuestion(){
+
 }

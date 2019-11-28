@@ -54,19 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
-    connect(startGame->nextbtn,&MyPushButton::clicked,[=](){
 
-        startGame->nextbtn->zoom1();
-        startGame->nextbtn->zoom1();
-        QTimer::singleShot(500,this,[=](){
-            startGame->hide();
-            startGame->~StartGame();
-            startGame=new StartGame;
-
-            startGame->show();
-        });
-
-    });
 
 
 

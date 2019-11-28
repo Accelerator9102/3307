@@ -15,6 +15,7 @@ public:
     explicit StartGame(QWidget *parent = nullptr);
     ~StartGame();
     MyPushButton *nextbtn = nullptr;
+    void nextQuestion();
 private:
     Ui::StartGame *ui;
 };
