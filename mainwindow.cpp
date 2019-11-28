@@ -41,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
     startGame = new StartGame;
 
 
+    int count=0;
     connect(startbtn,&MyPushButton::clicked,[=](){
        startbtn->zoom1();
        startbtn->zoom2();
@@ -51,8 +52,25 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     });
-}
 
+
+    connect(startGame->nextbtn,&MyPushButton::clicked,[=](){
+
+        startGame->nextbtn->zoom1();
+        startGame->nextbtn->zoom1();
+        QTimer::singleShot(500,this,[=](){
+            startGame->hide();
+            startGame->~StartGame();
+            startGame=new StartGame;
+
+            startGame->show();
+        });
+
+    });
+
+
+
+}
 MainWindow::~MainWindow()
 {
     delete ui;

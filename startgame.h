@@ -14,7 +14,7 @@ class StartGame : public QMainWindow
 public:
     explicit StartGame(QWidget *parent = nullptr);
     ~StartGame();
-
+    MyPushButton *nextbtn = nullptr;
 private:
     Ui::StartGame *ui;
 };
